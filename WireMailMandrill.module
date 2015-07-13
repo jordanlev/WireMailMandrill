@@ -83,6 +83,7 @@ class WireMailMandrill extends WireMail implements Module, ConfigurableModule {
 		if ($this->apiKey) {
 			require_once($this->config->paths->WireMailMandrill . 'mandrill-api-php/src/Mandrill.php');
 			$this->mandrill = new Mandrill($this->apiKey);
+			$this->mandrill->debug = false;
 		}
 	}
 
